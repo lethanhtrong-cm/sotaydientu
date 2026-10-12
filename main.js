@@ -7,14 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const moduleTitle = document.getElementById("module-title");
     const contentContainer = document.getElementById("content-container");
 
-    // Hàm render HTML động dựa trên dữ liệu array
+    // Hàm render HTML động dựa trên dữ liệu array (Đã bổ sung điều kiện hiển thị tiêu chuẩn đạt)
     const renderList = (dataList) => {
         return dataList.map(item => `
             <div class="card">
                 <h3>${item.id}: ${item.title}</h3>
-                ${item.kV ? `<p><strong>Thông số:</strong> kV: ${item.kV} \vert{} mAs:${item.mAs}</p>` : ''}
+                ${item.kV ? `<p><strong>Thông số:</strong> kV: ${item.kV} \vert{} mAs:${item.mAs} | Khoảng cách: ${item.distance}</p>` : ''}
                 ${item.sequences ? `<p><strong>Chuỗi xung:</strong> ${item.sequences}</p>` : ''}
                 <p><strong>Hướng dẫn:</strong> ${item.description}</p>
+                ${item.standard ? `<p style="margin-top: 8px; color: #2980b9;"><strong>Tiêu chuẩn đạt:</strong> ${item.standard}</p>` : ''}
             </div>
         `).join('');
     };
