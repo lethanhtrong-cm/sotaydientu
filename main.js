@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const moduleTitle = document.getElementById("module-title");
     const contentContainer = document.getElementById("content-container");
 
-    // Hàm render HTML động dựa trên dữ liệu array (Đã bổ sung điều kiện hiển thị tiêu chuẩn đạt)
+    // Hàm render HTML động dựa trên dữ liệu array
     const renderList = (dataList) => {
         return dataList.map(item => `
             <div class="card">
